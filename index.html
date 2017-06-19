@@ -232,5 +232,16 @@
   <script>
     var Blog={init:function(){Blog.postsWrapper=$("section#blog"),Blog.getPosts()},getPosts:function(){$.ajax({url:"https://codepen.io/vinsongrant/posts/feed",type:"GET",success:function(t){$(t).find("item").each(function(){var t=$(this).find("title").text(),o=$(this).find("link").text();Blog.embedPost(t,o)})}})},embedPost:function(t,o){var e=$("<article></article>").addClass("blog-post"),o=$("<a></a>").attr("href",o).attr("target","_blank").text(t),t=$("<p></p>").html(o);e.prepend(t),Blog.postsWrapper.append(e)}},Work={init:function(){Work.projects=$(".project"),Work.projects.on("touchstart",this.showOverlay)},showOverlay:function(){Work.projects.removeClass("active"),$(this).addClass("active")}},Engine={init:function(){Blog.init(),Work.init()}};$(document).on("ready",Engine.init());
   </script>
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-41441007-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+
 </body>
 </html>
